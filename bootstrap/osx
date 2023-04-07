@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+if [[ ! -d $(xcode-select -p) ]]; then
+  printf "XCode dev utilities not detected. Enter `xcode` to install: "
+
+  read can_install_xcode
+
+  if [[ "$can_install_xcode" == "xcode" ]]; then
+    xcode-select --install
+  else
+    echo "Manual installation command: \e[36mxcode-select --install\e[0m"
+  fi
+fi
+
+echo "Installing homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Installing native dependencies..."
+brew install tmux
+brew install neovim
+brew install ripgrep
+brew install fd
+brew install exa
+brew install gitui
+brew install neofetch
+
+brew tap solidiquis/tap
+brew install erdtree
+
