@@ -26,6 +26,7 @@ brew install fd
 brew install exa
 brew install gitui
 brew install neofetch
+brew install lazygit
 
 brew tap solidiquis/tap
 brew install erdtree

@@ -15,9 +15,27 @@ M.telescope = {
 			function()
 				require('telescope.builtin').live_grep({ default_text = vim.fn.expand('<cword>') })
 			end,
-			"find word under cursor",
 		},
 	},
+}
+
+M.nvterm = {
+  t = {
+    ["<A-g>"] = {
+      function()
+        require("nvterm.terminal").send('lazygit', 'float')
+      end,
+      "toggle floating Git term",
+    },
+  },
+  n = {
+    ["<A-g>"] = {
+      function()
+        require("nvterm.terminal").send('lazygit', 'float')
+      end,
+      "toggle floating Git term",
+    },
+  }
 }
 
 return M
