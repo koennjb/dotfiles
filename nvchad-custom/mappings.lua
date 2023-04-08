@@ -38,4 +38,14 @@ M.nvterm = {
   }
 }
 
+M.markdown_preview = {
+	n = {
+		["<leader>md"] = {
+			function()
+        vim.cmd('MarkdownPreviewToggle')
+			end,
+		},
+	},
+}
+
 return M
