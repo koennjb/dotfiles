@@ -29,8 +29,14 @@ ln -s "$DOTFILES/nvchad-custom" "$DOTFILES/nvim/lua/custom"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Init system dependencies
+. "$DOTFILES/bootstrap/installs"
+
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   echo "Darwin operating system detected."
+  . "$DOTFILES/bootstrap/osx-installs"
   . "$DOTFILES/bootstrap/osx"
+else
+  echo "Linux operating system detected." 
+  . "$DOTFILES/bootstrap/linux-installs"
 fi
 

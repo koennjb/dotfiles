@@ -1,0 +1,8 @@
+echo "Installing Linux dependencies"
+
+# Pipes.sh
+git clone https://github.com/pipeseroni/pipes.sh.git
+cd pipes.sh
+make install
+cd ..
+rm -rf pipes.sh
