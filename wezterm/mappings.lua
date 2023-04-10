@@ -25,6 +25,8 @@ function M.update_config(config)
     { key = "j", mods = "CMD", action = action.ActivatePaneDirection("Down") },
     { key = "w", mods = "CMD", action = action.CloseCurrentPane { confirm = false } },
     { key = "w", mods = "CMD|SHIFT", action = action.CloseCurrentTab { confirm = true } },
+    { key = "]", mods = "SHIFT|CMD", action = action.MoveTabRelative(1) },
+    { key = "[", mods = "SHIFT|CMD", action = action.MoveTabRelative(-1) },
     { key = "]", mods = "CMD", action = action.ActivateTabRelative(1) },
     { key = "[", mods = "CMD", action = action.ActivateTabRelative(-1) },
 
