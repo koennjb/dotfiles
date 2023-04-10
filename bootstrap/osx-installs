@@ -1,3 +1,4 @@
 echo "Installing OSX dependencies"
 
 brew install pipes-sh
+brew install pyenv-virtualenv
