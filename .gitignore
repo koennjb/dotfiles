@@ -2,3 +2,6 @@
 wezterm/wezterm
 nvim/nvim
 nvchad-custom/nvchad-custom
+
+# Environment specific ZSH config
+zsh/environment-configs

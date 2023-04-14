@@ -16,6 +16,9 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Java
+export PATH=$JAVA_HOME/bin:$PATH
+
 # Flutter
 export PATH="$PATH:$HOME/Downloads/software/mobile/flutter/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
@@ -26,3 +29,10 @@ export PATH="$HOME/code/blockchain/solana/solana-src"/bin:"$PATH"
 # Wezterm
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
+# AWS CLI
+export PATH=/usr/local/bin/aws_completer:$PATH
+
+# User scripts
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
