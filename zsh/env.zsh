@@ -29,9 +29,15 @@ export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if command -v rtx &> /dev/null
+then
+  # RTX
+  eval "$(rtx activate zsh)"
+else
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)

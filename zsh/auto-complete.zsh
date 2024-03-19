@@ -4,8 +4,6 @@ autoload bashcompinit && bashcompinit
 
 complete -C aws_completer aws 
 
-###-begin-flutter-completion-###
-
 if type complete &>/dev/null; then
   __flutter_completion() {
     local si="$IFS"
@@ -47,7 +45,8 @@ elif type compctl &>/dev/null; then
   compctl -K __flutter_completion flutter
 fi
 
-###-end-flutter-completion-###
-
-## Generated 2023-09-24 01:19:56.376530Z
-## By /Users/koennjb/Downloads/software/mobile/flutter/bin/cache/flutter_tools.snapshot
+if [ -d "$HOME/.local/share/rtx" ]
+then
+  # RTX
+  source ~/.local/share/rtx/completions.zsh
+fi
