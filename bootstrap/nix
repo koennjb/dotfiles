@@ -28,7 +28,7 @@ git submodule add https://github.com/NvChad/NvChad "$DOTFILES/nvim"
 # Symlinks for dotfiles
 ln -s "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
 ln -s "$DOTFILES/vim" "$HOME/.vim"
-ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
+ln -s "$DOTFILES/k1ue-nvim" "$HOME/.config/nvim"
 ln -s "$DOTFILES/wezterm" "$HOME/.config/wezterm"
 ln -s "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -s "$DOTFILES/alacritty/alacritty.yml" "$HOME/.alacritty.yml"
