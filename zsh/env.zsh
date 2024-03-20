@@ -27,10 +27,10 @@ export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 
-if command -v rtx &> /dev/null
+if command -v mise &> /dev/null
 then
-  # RTX
-  eval "$(rtx activate zsh)"
+  # mise
+  eval "$(mise activate zsh)"
 else
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

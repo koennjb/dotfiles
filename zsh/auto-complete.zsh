@@ -45,8 +45,8 @@ elif type compctl &>/dev/null; then
   compctl -K __flutter_completion flutter
 fi
 
-if [ -d "$HOME/.local/share/rtx" ]
+if [ -d "$HOME/.local/share/mise" ]
 then
-  # RTX
-  source ~/.local/share/rtx/completions.zsh
+  # MISE
+  source ~/.local/share/mise/completions.zsh
 fi
