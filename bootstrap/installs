@@ -1,7 +1,2 @@
 echo "Installing Global dependencies"
 
-git clone https://github.com/pipeseroni/pipes.sh.git "$DOTFILES/pipes.sh" 
-cd "$DOTFILES/pipes.sh"
-make install
-rm -rf $DOTFILES/pipes.sh
-cd $DOTFILES

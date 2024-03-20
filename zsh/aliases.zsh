@@ -19,6 +19,6 @@ if [[ ! -z $(command -v bat) ]]; then
 fi
 
 # Global aliases
-alias src="omz reload"
+alias src="exec zsh"
 alias coding="cd ~/code"
 
