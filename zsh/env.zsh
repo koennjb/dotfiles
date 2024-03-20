@@ -1,7 +1,5 @@
 export CURSOR_TYPE="ibeam"
 
-export PACKPATH="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-
 # FZF 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -11,7 +9,7 @@ cwd="%{\e[1;32m%}%~%{\e[0m%}"
 bottom="\n%{\e[31m%}\U2514%{\e[0m%} %{\e[1;32m%}\U2771%{\e[0m%}"
 
 # Prompt
-export PS1=$'$(print $left) $(print $cwd)$(git_info) $(print $bottom) '
+# export PS1=$'$(print $left) $(print $cwd)$(git_info) $(print $bottom) '
 
 # openssl
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"

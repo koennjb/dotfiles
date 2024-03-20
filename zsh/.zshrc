@@ -1,5 +1,6 @@
 export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
+source $DOTFILES/zsh/oh-my-zsh.zsh
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh/env.zsh --source_only
 source $DOTFILES/zsh/utils.zsh --source_only

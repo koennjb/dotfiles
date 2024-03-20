@@ -11,6 +11,7 @@ vim.opt.number = true
 vim.opt.numberwidth = 2
 -- Misc
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
 
 vim.opt.swapfile = false
 vim.opt.backup = false

@@ -23,7 +23,6 @@ return {
     },
   },
   opts = function()
-    print("Configuring opts for Tele")
     return {
       defaults = {
         vimgrep_arguments = {
