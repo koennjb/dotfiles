@@ -20,3 +20,8 @@ if [[ -f "$DOTFILES/zsh/keys.zsh" ]]; then
   source $DOTFILES/zsh/keys.zsh
 fi
 
+
+# if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
+
+export AWS_EC2_METADATA_DISABLED=true
+

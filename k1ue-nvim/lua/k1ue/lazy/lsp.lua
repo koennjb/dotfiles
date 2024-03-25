@@ -31,24 +31,25 @@ return {
         "lua_ls",
         "rust_analyzer",
         "tsserver",
+        "eslint"
       }
     })
     require("mason-lspconfig").setup_handlers {
-        -- The first entry (without a key) will be the default handler
-        default_setup,
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup {
-            capabilities = lsp_capabilities,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim", "it", "describe", "before_each", "after_each" },
-                }
+      -- The first entry (without a key) will be the default handler
+      default_setup,
+      ["lua_ls"] = function()
+        local lspconfig = require("lspconfig")
+        lspconfig.lua_ls.setup {
+          capabilities = lsp_capabilities,
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim", "it", "describe", "before_each", "after_each" },
               }
             }
           }
-        end
+        }
+      end
     }
 
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
