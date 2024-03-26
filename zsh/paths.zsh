@@ -13,8 +13,12 @@ fi
 
 # Python
 export PATH="$HOME/.pyenv/bin:$PATH"
+
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv &> /dev/null
+then
+  eval "$(pyenv init --path)"
+fi
 
 # Java
 export PATH=$JAVA_HOME/bin:$PATH
