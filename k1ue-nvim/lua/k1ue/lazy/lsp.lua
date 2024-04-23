@@ -55,6 +55,20 @@ return {
           }
         }
       end,
+      ["eslint"] = function()
+        local lspconfig = require("lspconfig")
+
+        local settings  = {}
+        local yarnDir = vim.fn.getcwd() .. '/.yarn/sdks'
+        if vim.fn.isdirectory(yarnDir) == 1 then
+          settings.nodePath = yarnDir
+        end
+
+        lspconfig.eslint.setup {
+          capabilities = lsp_capabilities,
+          settings = settings
+        }
+      end,
       ["gopls"] = function()
         local lspconfig = require("lspconfig")
         lspconfig.gopls.setup {
