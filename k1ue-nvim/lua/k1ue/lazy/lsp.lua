@@ -30,13 +30,8 @@ return {
       ensure_installed = {
         "lua_ls",
         "rust_analyzer",
-        "tsserver",
-        "eslint",
-        "gopls",
-        "goimports",
-        "gofumpt",
-        "gomodifytags",
-        "impl"
+        "ts_ls",
+        "eslint"
       }
     })
     require("mason-lspconfig").setup_handlers {

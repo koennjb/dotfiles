@@ -13,4 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = "k1ue.lazy",
+  checker = { enabled = true },
+
 });
