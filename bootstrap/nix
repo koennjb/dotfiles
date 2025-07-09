@@ -13,10 +13,6 @@ if [[ -e "$HOME/.config/nvim" ]]; then
   echo "Detected existing Neovim config, moving to $HOME/.config/nvim-old"
   mv "$HOME/.config/nvim" "$HOME/.config/nvim-old"
 fi
-if [[ -e "$HOME/.config/wezterm" ]]; then
-  echo "Detected existing Wezterm config, moving to $HOME/.config/wezterm-old"
-  mv "$HOME/.config/wezterm" "$HOME/.config/wezterm-old"
-fi
 if [[ -e "$HOME/.zshrc" ]]; then
   echo "Detected existing .zshrc, moving to $HOME/.zshrc-old"
   mv "$HOME/.zshrc" "$HOME/.zshrc-old"
@@ -26,11 +22,7 @@ fi
 ln -s "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
 ln -s "$DOTFILES/vim" "$HOME/.vim"
 ln -s "$DOTFILES/k1ue-nvim" "$HOME/.config/nvim"
-ln -s "$DOTFILES/wezterm" "$HOME/.config/wezterm"
 ln -s "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
-ln -s "$DOTFILES/alacritty/alacritty.yml" "$HOME/.alacritty.yml"
-ln -s "$DOTFILES/alacritty/alacritty_color_schemes.yml" "$HOME/.alacritty_color_schemes.yml"
-ln -s "$DOTFILES/ruby/.irbrc" "$HOME/.irbrc"
 
 # Init system dependencies
 . "$DOTFILES/bootstrap/installs"
