@@ -1,3 +1,4 @@
+
 export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
 # Load environment specific configs
@@ -19,7 +20,6 @@ source $DOTFILES/zsh/auto-complete.zsh
 if [[ -f "$DOTFILES/zsh/keys.zsh" ]]; then
   source $DOTFILES/zsh/keys.zsh
 fi
-
 
 # if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
 

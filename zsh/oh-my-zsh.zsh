@@ -1,5 +1,9 @@
-ZSH_THEME="spaceship"
+source $(brew --prefix)/opt/spaceship/spaceship.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 plugins=(
+  mise
   git
   macos
   node
@@ -7,9 +11,6 @@ plugins=(
   npm
   z
   vscode
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-shift-select
 )
 
 # SPACESHIP THEME CONFIG

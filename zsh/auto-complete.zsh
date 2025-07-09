@@ -2,8 +2,6 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 autoload bashcompinit && bashcompinit
 
-complete -C aws_completer aws 
-
 if type complete &>/dev/null; then
   __flutter_completion() {
     local si="$IFS"
@@ -45,8 +43,3 @@ elif type compctl &>/dev/null; then
   compctl -K __flutter_completion flutter
 fi
 
-if [ -d "$HOME/.local/share/mise" ]
-then
-  # MISE
-  source ~/.local/share/mise/completions.zsh
-fi

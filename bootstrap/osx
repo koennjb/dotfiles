@@ -31,3 +31,7 @@ brew install lazygit
 brew tap solidiquis/tap
 brew install erdtree
 
+# oh-my-zsh plugins
+brew install spaceship
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
