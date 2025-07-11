@@ -35,3 +35,9 @@ brew install erdtree
 brew install spaceship
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+
+brew install gh
+
+# AWS CLI
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /

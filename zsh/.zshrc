@@ -12,6 +12,12 @@ source $DOTFILES/zsh/env.zsh
 source $DOTFILES/zsh/utils.zsh 
 source $DOTFILES/zsh/init.zsh 
 source $DOTFILES/zsh/aliases.zsh 
+
+# Load environment-specific aliases
+if [[ -f "$DOTFILES/zsh/environment-configs/aliases.zsh" ]]; then
+  source $DOTFILES/zsh/environment-configs/aliases.zsh
+fi
+
 source $DOTFILES/zsh/hooks.zsh 
 source $DOTFILES/zsh/key_bindings.zsh 
 source $DOTFILES/zsh/auto-complete.zsh 
