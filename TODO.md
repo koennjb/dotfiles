@@ -1,0 +1,1 @@
+- [ ] dot file for global git config (username, email)
