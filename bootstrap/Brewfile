@@ -20,6 +20,7 @@ brew "stow"
 brew "tmux"
 
 cask "caffeine"
+cask "ghostty"
 
 vscode "adamerose.markdown-wysiwyg"
 vscode "amazonwebservices.aws-toolkit-vscode"
