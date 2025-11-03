@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Main shell profile - sources all configuration files
+
+# Get the directory where this profile is located
+SHELL_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
+
+export DOTFILES="$HOME/dotfiles"
+
+# Source function to safely load files
+source_if_exists() {
+    if [ -f "$1" ]; then
+        source "$1"
+    fi
+}
+
+# Load configurations in order
+source_if_exists "$SHELL_CONFIG_DIR/paths"
+source_if_exists "$SHELL_CONFIG_DIR/paths.local"
+
+source_if_exists "$SHELL_CONFIG_DIR/env"
+source_if_exists "$SHELL_CONFIG_DIR/env.local"
+
+source_if_exists "$SHELL_CONFIG_DIR/aliases"
+source_if_exists "$SHELL_CONFIG_DIR/aliases.local"
+
+source_if_exists "$SHELL_CONFIG_DIR/functions"
+source_if_exists "$SHELL_CONFIG_DIR/functions.local"
+
+# Shell-specific configurations
+if [ -n "$ZSH_VERSION" ]; then
+    source_if_exists "$SHELL_CONFIG_DIR/zshrc"
+    source_if_exists "$SHELL_CONFIG_DIR/zshrc.local"
+elif [ -n "$BASH_VERSION" ]; then
+    source_if_exists "$SHELL_CONFIG_DIR/bashrc"
+    source_if_exists "$SHELL_CONFIG_DIR/bashrc.local"
+fi

@@ -1,0 +1,115 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+palette = "catppuccin_mocha"
+
+format = """
+[╭](fg:separator)\
+$status\
+$time\
+$directory\
+$git_branch\
+$git_status\
+$aws\
+$cmd_duration\
+$line_break\
+[╰](fg:separator)\
+$character\
+"""
+
+###########################################
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+separator = "#585b70"
+icon = "#1e1e2e"
+background = "#45475a"
+
+directory = "#94e2d5"
+duration = "#e26f31"
+status = "#e23140"
+
+###########################################
+
+[time]
+disabled = false
+time_format = "%T"
+style = "bold overlay0"
+format = "[─](fg:separator)[](fg:mauve)[$time](bold fg:icon bg:mauve)[](fg:mauve)[─](fg:separator)"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[directory]
+format = "[─](fg:separator)[](fg:directory)[](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bg:background)[](fg:background)"
+truncate_to_repo = false
+truncation_length = 0
+
+[git_branch]
+symbol = ""
+format = "[─](fg:separator)[](fg:green)[$symbol](fg:icon bg:green)[](fg:green bg:background)[ $branch ](bg:background)"
+
+[git_status]
+format = "[\\($all_status$ahead_behind\\)](bold fg:green bg:background)[](fg:background)"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[status]
+symbol = "󰈸"
+not_executable_symbol = ""
+not_found_symbol = ""
+sigint_symbol = ""
+map_symbol = true
+format = "[─┴─](fg:separator)[](fg:status)[$symbol](fg:icon bg:status)[](fg:status bg:background)[ code: $status](bg:background)[](fg:background)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[$symbol](fg:icon bg:status)[](fg:status bg:background)[ $pipestatus](bg:background)[](fg:background)"
+disabled = false
+
+[aws]
+symbol = ""
+format = "[─](fg:separator)[](fg:maroon)[$symbol](fg:icon bg:maroon)[](fg:maroon bg:background)[ $profile](bg:background)[](fg:background)"
+disabled = false
+
+[cmd_duration]
+format = "[─](fg:separator)[](fg:duration)[󱐋](fg:icon bg:duration)[](fg:duration bg:background)[ $duration](bg:background)[](fg:background)"
+min_time = 1000

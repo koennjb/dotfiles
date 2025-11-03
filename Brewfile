@@ -19,6 +19,17 @@ brew "ripgrep"
 brew "stow"
 brew "tmux"
 
+# ZSH stuff
+brew "starship"
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
+brew "zsh-history-substring-search"
+brew "fzf"
+
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
+cask "font-0xproto-nerd-font"
+
 cask "caffeine"
 cask "ghostty"
 

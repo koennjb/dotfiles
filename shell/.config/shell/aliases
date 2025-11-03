@@ -1,0 +1,6 @@
+if [[ -f $(which nvim) ]]; then
+  alias vi="nvim"
+  alias vim="nvim"
+else
+  alias vi="vim"
+fi

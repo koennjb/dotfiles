@@ -1,0 +1,13 @@
+# User scripts
+export PATH="$DOTFILES/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+
+# Homebrew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS Homebrew paths
+    if [[ -d /opt/homebrew/bin ]]; then
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
+fi

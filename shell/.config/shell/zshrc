@@ -1,0 +1,39 @@
+#!/usr/bin/env zsh
+# Zsh-specific configurations
+
+BREW_DIR="$(brew --prefix)"
+
+# ===== Starship Prompt =====
+if command -v starship &> /dev/null; then
+    export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+    eval "$(starship init zsh)"
+fi
+
+# ===== FZF =====
+if command -v fzf &> /dev/null; then
+    # Key bindings and fuzzy completion
+    eval "$(fzf --zsh)"
+    
+    # FZF-specific keybindings
+    bindkey '^T' fzf-file-widget      # Ctrl+T for files
+    bindkey '^R' fzf-history-widget   # Ctrl+R for history
+fi
+
+# ===== Zsh Plugins =====
+# Syntax highlighting
+if [ -f $BREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source $BREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Autosuggestions
+if [ -f $BREW_DIR/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source $BREW_DIR/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # Dimmer suggestions
+fi
+
+# History substring search
+if [ -f $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+    source $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    bindkey '^[[A' history-substring-search-up     # Up arrow
+    bindkey '^[[B' history-substring-search-down   # Down arrow
+fi
