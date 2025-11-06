@@ -1,0 +1,1 @@
+-- Setting vim.opt
