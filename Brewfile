@@ -133,6 +133,3 @@ vscode "vscodevim.vim"
 vscode "wenfangdu.snippet-generator"
 vscode "yzhang.markdown-all-in-one"
 vscode "zxh404.vscode-proto3"
-
-go "cmd/go"
-go "cmd/gofmt"

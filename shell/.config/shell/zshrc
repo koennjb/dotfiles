@@ -37,3 +37,5 @@ if [ -f $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-searc
     bindkey '^[[A' history-substring-search-up     # Up arrow
     bindkey '^[[B' history-substring-search-down   # Down arrow
 fi
+
+eval "$(mise activate zsh)"

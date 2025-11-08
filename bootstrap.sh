@@ -64,6 +64,7 @@ PACKAGES=(
     "starship"
     "tmux"
     "nvim"
+    "mise"
 )
 
 for package in "${PACKAGES[@]}"; do
@@ -72,6 +73,10 @@ for package in "${PACKAGES[@]}"; do
 	stow -v --restow --dir="$SCRIPT_DIR" --target="$HOME" "$package"
     fi
 done
+
+echo "Installing Mise tools"
+mise install
+echo "All Mise tools installed!"
 
 echo ""
 echo "✓ Dotfiles setup complete!"
