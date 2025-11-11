@@ -18,3 +18,14 @@ keybind = ctrl+shift+[=previous_tab
 keybind = super+d=new_split:right
 # Split horizontally (new split below)
 keybind = super+e=new_split:down
+
+# Pane navigation (VIM-style)
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:down
+keybind = super+k=goto_split:up
+keybind = super+l=goto_split:right
+
+# ===== Visual Settings =====
+# Make inactive panes more dimmed for better active pane indication
+# Lower values = more dimmed (0.0 = fully transparent, 1.0 = fully opaque)
+unfocused-split-opacity = 0.25
