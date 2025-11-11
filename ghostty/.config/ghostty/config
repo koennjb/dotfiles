@@ -7,3 +7,14 @@ font-size = 14
 font-style = Regular
 font-style-bold = Bold
 font-style-italic = Italic
+
+# ===== Keybindings =====
+# Tab navigation
+keybind = ctrl+shift+]=next_tab
+keybind = ctrl+shift+[=previous_tab
+
+# Split panes
+# Split vertically (new split to the right)
+keybind = super+d=new_split:right
+# Split horizontally (new split below)
+keybind = super+e=new_split:down
