@@ -72,7 +72,7 @@ vimcmd_symbol = "[❮](bold green)"
 
 [directory]
 format = "[─](fg:separator)[](fg:directory)[](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bg:background)[](fg:background)"
-truncate_to_repo = false
+truncate_to_repo = true
 truncation_length = 0
 
 [git_branch]

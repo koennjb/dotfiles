@@ -26,6 +26,9 @@ source_if_exists "$SHELL_CONFIG_DIR/aliases.local"
 source_if_exists "$SHELL_CONFIG_DIR/functions"
 source_if_exists "$SHELL_CONFIG_DIR/functions.local"
 
+source_if_exists "$SHELL_CONFIG_DIR/auto-complete"
+source_if_exists "$SHELL_CONFIG_DIR/auto-complete.local"
+
 # Shell-specific configurations
 if [ -n "$ZSH_VERSION" ]; then
     source_if_exists "$SHELL_CONFIG_DIR/zshrc"
