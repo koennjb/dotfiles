@@ -38,6 +38,13 @@ fi
 # History substring search - enables prefix-based history navigation with up/down arrows
 # This must be loaded after syntax highlighting and autosuggestions
 if [ -f $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+    # Catppuccin-themed colors for history search highlights (Mocha palette)
+    # FOUND: Catppuccin blue (#89b4fa) - when a matching command is found
+    # NOT_FOUND: Catppuccin red (#f38ba8) - when no matching command exists
+    # ZLE supports hex colors in the format bg=#RRGGBB,fg=#RRGGBB
+    export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=#89b4fa,fg=#1e1e2e,bold'
+    export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=#f38ba8,fg=#1e1e2e,bold'
+    
     source $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     
     # Unbind default history navigation to ensure substring search takes precedence
