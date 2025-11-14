@@ -29,21 +29,29 @@ fi
 # Enable menu selection for completion
 zstyle ':completion:*' menu select
 
-# autocompletion using arrow keys (based on history)
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
-
 # Autosuggestions
 if [ -f $BREW_DIR/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source $BREW_DIR/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # Dimmer suggestions
 fi
 
-# History substring search
-# if [ -f $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
-#     source $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-#     bindkey '^[[A' history-substring-search-up     # Up arrow
-#     bindkey '^[[B' history-substring-search-down   # Down arrow
-# fi
+# History substring search - enables prefix-based history navigation with up/down arrows
+# This must be loaded after syntax highlighting and autosuggestions
+if [ -f $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+    source $BREW_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    
+    # Unbind default history navigation to ensure substring search takes precedence
+    bindkey -r '^[[A'  # Unbind up arrow
+    bindkey -r '^[[B'  # Unbind down arrow
+    
+    # Bind up and down arrow keys for history search
+    # These bindings work with any number of characters (including 1)
+    bindkey '^[[A' history-substring-search-up     # Up arrow
+    bindkey '^[[B' history-substring-search-down   # Down arrow
+    
+    # Also bind in vi mode if you use it
+    bindkey -M vicmd 'k' history-substring-search-up
+    bindkey -M vicmd 'j' history-substring-search-down
+fi
 
 eval "$(mise activate zsh)"
