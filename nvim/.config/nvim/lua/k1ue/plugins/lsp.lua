@@ -1,3 +1,9 @@
+-- Disable LSP plugins when running in VS Code (vscode-neovim extension)
+-- VS Code has its own LSP implementation, so Neovim's LSP can cause conflicts
+if vim.g.vscode then
+  return {}
+end
+
 return {
   'mason-org/mason-lspconfig.nvim',
   dependencies = {
@@ -18,9 +24,6 @@ return {
       automativc_enable = true,
       ensure_installed = { "ts_ls", "lua_ls" }
     })
-
-     
-
   end
 }
 
