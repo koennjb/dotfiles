@@ -1,5 +1,4 @@
 tap "solidiquis/tap"
-
 brew "erdtree"
 brew "libgit2"
 brew "openssl@1.1"
@@ -18,6 +17,7 @@ brew "pre-commit"
 brew "ripgrep"
 brew "stow"
 brew "tmux"
+brew "jq"
 
 # ZSH stuff
 brew "starship"
@@ -33,6 +33,10 @@ cask "font-0xproto-nerd-font"
 cask "caffeine"
 cask "ghostty"
 cask "linearmouse"
+
+# Sketchy bar
+tap "FelixKratz/formulae"
+brew "sketchybar", restart_service: :changed
 
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "anseki.vscode-color"

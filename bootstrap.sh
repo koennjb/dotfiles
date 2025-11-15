@@ -23,7 +23,12 @@ if [[ "$OS" == "macos" ]]; then
     fi
     
     # Install from Brewfile
-    brew bundle --file="$SCRIPT_DIR/Brewfile" --no-upgrade
+    # Check and install from brewfile
+    brew bundle --file="$SCRIPT_DIR/Brewfile" check || brew bundle --file="$SCRIPT_DIR/Brewfile" --no-upgrade install
+
+    echo "Setting up MacOS Configurations"
+    /bin/bash $SCRIPT_DIR/macos/config.sh
+    echo "Mac configs set"
 fi
 
 # Linux setup
@@ -65,6 +70,7 @@ PACKAGES=(
     "tmux"
     "nvim"
     "mise"
+    "sketchybar"
 )
 
 for package in "${PACKAGES[@]}"; do
