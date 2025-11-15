@@ -38,6 +38,9 @@ cask "linearmouse"
 tap "FelixKratz/formulae"
 brew "sketchybar", restart_service: :changed
 
+# Window manager
+cask "nikitabobko/tap/aerospace"
+
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "anseki.vscode-color"
 vscode "arcanis.vscode-zipfs"

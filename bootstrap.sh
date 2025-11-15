@@ -71,6 +71,7 @@ PACKAGES=(
     "nvim"
     "mise"
     "sketchybar"
+    "aerospace"
 )
 
 for package in "${PACKAGES[@]}"; do

@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+BREW_DIR="$(brew --prefix)"
+
+eval "$($BREW_DIR/bin/brew shellenv)"
