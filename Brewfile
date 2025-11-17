@@ -37,6 +37,8 @@ cask "linearmouse"
 # Sketchy bar
 tap "FelixKratz/formulae"
 brew "sketchybar", restart_service: :changed
+brew "switchaudio-osx"
+brew "nowplaying-cli"
 
 # Window manager
 cask "nikitabobko/tap/aerospace"
