@@ -18,6 +18,7 @@ brew "ripgrep"
 brew "stow"
 brew "tmux"
 brew "jq"
+brew "lua"
 
 # ZSH stuff
 brew "starship"
@@ -39,6 +40,9 @@ tap "FelixKratz/formulae"
 brew "sketchybar", restart_service: :changed
 brew "switchaudio-osx"
 brew "nowplaying-cli"
+
+# Janky Border
+brew "borders"
 
 # Window manager
 cask "nikitabobko/tap/aerospace"

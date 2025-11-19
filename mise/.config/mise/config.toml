@@ -2,3 +2,4 @@
 usage = "latest"
 go = "latest"
 node = "latest"
+lua = "latest"
