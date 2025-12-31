@@ -74,6 +74,48 @@ run= [
   "layout floating",
 ]
 
+[[on-window-detected]]
+if.app-id="com.apple.finder"
+run= [
+  "layout floating",
+]
+
+[[on-window-detected]]
+if.app-id="com.apple.iCal"
+run= [
+  "layout floating",
+]
+
+# Google meet web app
+[[on-window-detected]]
+if.app-id="com.apple.Safari.WebApp.53C53EB3-891A-4D95-A835-CBB534840619"
+run= [
+  "layout floating"
+]
+
+[[on-window-detected]]
+if.app-id="com.spotify.client"
+run= [
+  "layout floating",
+]
+  
+[[on-window-detected]]
+if.app-id="com.tinyspeck.slackmacgap"
+run= [
+  "layout floating",
+]
+
+[[on-window-detected]]
+if.app-id="com.superhuman.electron"
+run= [
+  "layout floating",
+]
+  
+[[on-window-detected]]
+if.app-id="com.linear"
+run= [
+  "layout floating",
+]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -129,6 +171,9 @@ alt-shift-down = ['join-with down', 'mode main']
 alt-shift-up = ['join-with up', 'mode main']
 alt-shift-right = ['join-with right', 'mode main']
 
+alt-shift-f = ['fullscreen']
+alt-ctrl-shift-f = ['layout floating']
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
@@ -138,15 +183,47 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+# Ensure that secondary monitors use 6-9
+[workspace-to-monitor-force-assignment]
+
+1 = 'main'
+
+2 = 'main'
+
+3 = 'main'
+
+4 = 'main'
+
+5 = 'main'
+
+6 = ['secondary', 'main']
+
+7 = ['secondary', 'main']
+
+8 = ['secondary', 'main']
+
+9 = ['secondary', 'main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 

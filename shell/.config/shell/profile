@@ -14,11 +14,12 @@ source_if_exists() {
 }
 
 # Load configurations in order
-source_if_exists "$SHELL_CONFIG_DIR/paths"
-source_if_exists "$SHELL_CONFIG_DIR/paths.local"
 
 source_if_exists "$SHELL_CONFIG_DIR/env"
 source_if_exists "$SHELL_CONFIG_DIR/env.local"
+
+source_if_exists "$SHELL_CONFIG_DIR/paths"
+source_if_exists "$SHELL_CONFIG_DIR/paths.local"
 
 source_if_exists "$SHELL_CONFIG_DIR/aliases"
 source_if_exists "$SHELL_CONFIG_DIR/aliases.local"

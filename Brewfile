@@ -34,6 +34,7 @@ cask "font-0xproto-nerd-font"
 cask "caffeine"
 cask "ghostty"
 cask "linearmouse"
+cask "spotify"
 
 # Sketchy bar
 tap "FelixKratz/formulae"
