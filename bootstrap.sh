@@ -73,6 +73,7 @@ PACKAGES=(
     "sketchybar"
     "aerospace"
     "iterm2"
+    "git"
 )
 
 for package in "${PACKAGES[@]}"; do
