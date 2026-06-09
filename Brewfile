@@ -10,6 +10,7 @@ brew "pkgconf"
 brew "graphviz"
 brew "lazygit"
 brew "mise"
+brew "direnv"
 brew "neofetch"
 brew "neovim"
 brew "pipes-sh", link: false
