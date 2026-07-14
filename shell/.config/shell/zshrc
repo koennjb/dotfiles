@@ -3,6 +3,18 @@
 
 BREW_DIR="$(brew --prefix)"
 
+# ===== History =====
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt SHARE_HISTORY        # write immediately and pull in commands from other running sessions
+setopt HIST_IGNORE_ALL_DUPS # keep only the most recent copy of a duplicate command
+setopt HIST_FIND_NO_DUPS    # skip consecutive duplicate matches when cycling with arrow keys
+setopt HIST_REDUCE_BLANKS   # trim superfluous whitespace before saving
+setopt HIST_IGNORE_SPACE    # don't record commands that start with a space
+setopt EXTENDED_HISTORY     # save timestamps alongside commands
+
 # ===== Starship Prompt =====
 if command -v starship &> /dev/null; then
     export STARSHIP_CONFIG="$HOME/.config/starship.toml"
