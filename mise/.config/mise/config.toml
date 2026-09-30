@@ -1,7 +1,11 @@
 [tools]
 usage = "latest"
 go = "latest"
-node = "latest"
+node = "24.3.0"
 lua = "latest"
 python = "3.14.1"
 rust = "latest"
+pnpm = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]

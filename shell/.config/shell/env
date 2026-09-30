@@ -1,5 +1,21 @@
 #!/usr/bin/env zsh
 
-BREW_DIR="$(brew --prefix)"
+# Initialize Homebrew even when a fresh shell starts with only system paths.
+if command -v brew >/dev/null 2>&1; then
+    BREW_DIR="$(brew --prefix)"
+elif [[ -x /opt/homebrew/bin/brew ]]; then
+    BREW_DIR="/opt/homebrew"
+elif [[ -x /usr/local/bin/brew ]]; then
+    BREW_DIR="/usr/local"
+fi
 
-eval "$($BREW_DIR/bin/brew shellenv)"
+if [[ -n "${BREW_DIR:-}" ]]; then
+    eval "$("$BREW_DIR/bin/brew" shellenv)"
+fi
+
+# Homebrew's versioned JDK is keg-only. Keep an explicitly selected JDK.
+if [[ -z "${JAVA_HOME:-}" && -n "${HOMEBREW_PREFIX:-}" && "$OSTYPE" == "darwin"* ]]; then
+    if [[ -x "$HOMEBREW_PREFIX/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java" ]]; then
+        export JAVA_HOME="$HOMEBREW_PREFIX/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
+    fi
+fi

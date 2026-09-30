@@ -4,10 +4,10 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
-# Homebrew
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS Homebrew paths
-    if [[ -d /opt/homebrew/bin ]]; then
-        export PATH="/opt/homebrew/bin:$PATH"
-    fi
+# Java (JAVA_HOME may be overridden in env.local).
+if [[ -n "${JAVA_HOME:-}" && -d "$JAVA_HOME/bin" ]]; then
+    case ":$PATH:" in
+        *":$JAVA_HOME/bin:"*) ;;
+        *) export PATH="$JAVA_HOME/bin:$PATH" ;;
+    esac
 fi
