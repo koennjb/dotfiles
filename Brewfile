@@ -50,6 +50,9 @@ brew "borders"
 # Window manager
 cask "nikitabobko/tap/aerospace"
 
+# Syncthing
+cask "syncthing"
+
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "anseki.vscode-color"
 vscode "arcanis.vscode-zipfs"

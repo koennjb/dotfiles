@@ -3,6 +3,7 @@ export PATH="$DOTFILES/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # Java (JAVA_HOME may be overridden in env.local).
 if [[ -n "${JAVA_HOME:-}" && -d "$JAVA_HOME/bin" ]]; then
