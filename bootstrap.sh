@@ -32,9 +32,8 @@ if [[ "$OS" == "macos" ]]; then
     # Make sure the chosen brew is on PATH for the rest of this script
     eval "$("$BREW" shellenv)"
 
-    # Install from Brewfile
-    # Check and install from brewfile
-    brew bundle --file="$SCRIPT_DIR/Brewfile" check || brew bundle --file="$SCRIPT_DIR/Brewfile" --no-upgrade install
+    # Install missing dependencies without upgrading existing packages.
+    brew bundle check --file="$SCRIPT_DIR/Brewfile" --no-upgrade || brew bundle install --file="$SCRIPT_DIR/Brewfile" --no-upgrade
 
     echo "Setting up MacOS Configurations"
     /bin/bash $SCRIPT_DIR/macos/config.sh
