@@ -1,7 +1,11 @@
 #!/usr/bin/env zsh
 # Zsh-specific configurations
 
-BREW_DIR="$(brew --prefix)"
+if [[ -x /opt/homebrew/bin/brew ]]; then
+    BREW_DIR="/opt/homebrew"
+elif command -v brew &>/dev/null; then
+    BREW_DIR="$(brew --prefix)"
+fi
 
 # ===== History =====
 HISTFILE="$HOME/.zsh_history"

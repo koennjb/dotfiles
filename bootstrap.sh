@@ -17,11 +17,21 @@ fi
 
 # macOS setup
 if [[ "$OS" == "macos" ]]; then
-    # Install Homebrew if needed
-    if ! command -v brew &> /dev/null; then
+    # Prefer ARM (Apple Silicon) Homebrew at /opt/homebrew; fall back to x86 at
+    # /usr/local only if the ARM install isn't present.
+    if [[ -x /opt/homebrew/bin/brew ]]; then
+        BREW=/opt/homebrew/bin/brew
+    elif [[ -x /usr/local/bin/brew ]]; then
+        BREW=/usr/local/bin/brew
+    else
+        # Neither present — install Homebrew (will land at /opt/homebrew on Apple Silicon)
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        BREW=/opt/homebrew/bin/brew
     fi
-    
+
+    # Make sure the chosen brew is on PATH for the rest of this script
+    eval "$("$BREW" shellenv)"
+
     # Install from Brewfile
     # Check and install from brewfile
     brew bundle --file="$SCRIPT_DIR/Brewfile" check || brew bundle --file="$SCRIPT_DIR/Brewfile" --no-upgrade install
